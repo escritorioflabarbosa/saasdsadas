@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-display: "Playfair Display", serif;
+
+  --color-gold: #C5A059;
+  --color-gold-hover: #A88647;
+  --color-legal-black: #000000;
+  --color-legal-dark: #0A0A0A;
+  --color-legal-gray: #1C1C1C;
+  --color-legal-white: #F9F9F9;
+}
+
+@layer base {
+  body {
+    @apply bg-legal-black text-legal-white font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Utilities */
+.text-gold { color: var(--color-gold); }
+.bg-gold { background-color: var(--color-gold); }
+.border-gold { border-color: var(--color-gold); }
+
+/* Sticky Header Blur */
+.header-blur {
+  @apply backdrop-blur-md bg-legal-black/80;
+}
+
+/* Transitions */
+.transition-luxury {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+/* Bold Typography Theme Specifics */
+.hero-title {
+  font-size: clamp(3rem, 10vw, 4.5rem);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.area-tag {
+  @apply px-3 py-1 border border-gold/40 rounded-full text-gold text-[10px] tracking-widest uppercase inline-block;
+}
+
+.nav-link {
+  @apply text-[11px] tracking-[0.2em] uppercase transition-colors duration-300;
+}
